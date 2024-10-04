@@ -16,3 +16,19 @@ Why is PySpark Useful for Distributed Processing?
 5. **DataFrame API:** PySpark includes a DataFrame API, which simplifies working with large datasets, providing operations similar to SQL and making it easier to manipulate, transform, and query data.
 
 In summary, PySpark is highly beneficial for distributed processing of large datasets due to its ability to scale, provide fault tolerance, and leverage the power of parallel processing across clusters, all while being accessible through Python.
+
+Essentially a user interface for Apache Spark 
+
+Often used for 
+  -large scale data prcoessing 
+  -machine learning  
+
+Motivation 
+  -When it comes to large datasets, we cannot just rely on our local system 
+  -Try to preprocess data through distributed systems
+
+Provide dataframes, machine learning algorithms (regression, classification clustering, etc)
+Runs workloads 100x faster: MapReduce 
+ 
+Overall: Apache Spark is a fast and general-purpose cluster computing system. It provides high-level APIs in Scala, Java, and Python that make parallel jobs easy to write, and an optimized engine that supports general computation graphs
+ 

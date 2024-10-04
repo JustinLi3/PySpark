@@ -1,21 +1,16 @@
-# Import the required module
+import os
 from pyspark.sql import SparkSession
 
-# Initialize a Spark session
-spark = SparkSession.builder \
-    .appName("Simple PySpark Test") \
-    .master("local[*]") \
-    .getOrCreate()
+# Set the HADOOP_USER_NAME to bypass Hadoop's user authentication
+os.environ['HADOOP_USER_NAME'] = 'hadoop'
 
-# Create a simple DataFrame
-data = [("John", 28), ("Anna", 23), ("Mike", 35)]
-columns = ["Name", "Age"]
+# Start a Spark session
+spark = SparkSession.builder.appName('Practice').getOrCreate()
 
-# Create DataFrame
-df = spark.createDataFrame(data, columns)
+# Set log level to ERROR to reduce verbosity
+spark.sparkContext.setLogLevel("ERROR")
 
-# Show the DataFrame
-df.show()
+# Read dataset with Spark (with header and inferred schema)
+df_pyspark = spark.read.csv('practice.csv', header=True, inferSchema=True)
 
-# Stop the Spark session
-spark.stop()
+df_pyspark.show()
